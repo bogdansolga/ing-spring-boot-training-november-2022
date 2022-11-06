@@ -17,5 +17,6 @@
     <modules>
         <module>d04s01-spring-security</module>
         <module>d04s02-unit-and-integration-testing</module>
+        <module>d04s03-using-aspects</module>
     </modules>
 </project>

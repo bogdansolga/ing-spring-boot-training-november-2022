@@ -7,7 +7,7 @@
     <artifactId>d01s02-simple-beans-wiring</artifactId>
 
     <parent>
-        <groupId>net.safedata</groupId>
+        <groupId>com.ing</groupId>
         <artifactId>d01</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -19,7 +19,7 @@
         </dependency>
 
         <dependency>
-            <groupId>net.safedata</groupId>
+            <groupId>com.ing</groupId>
             <artifactId>domain-model</artifactId>
         </dependency>
 

@@ -7,7 +7,7 @@
     <artifactId>d02s03e03-spring-oxm-dto-demo</artifactId>
 
     <parent>
-        <groupId>net.safedata</groupId>
+        <groupId>com.ing</groupId>
         <artifactId>d02s03-spring-web</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
@@ -19,7 +19,7 @@
         </dependency>
 
         <dependency>
-            <groupId>net.safedata</groupId>
+            <groupId>com.ing</groupId>
             <artifactId>domain-model</artifactId>
         </dependency>
 

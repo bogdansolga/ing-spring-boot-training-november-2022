@@ -1,0 +1,23 @@
+spring:
+  data:
+    cassandra:
+      schema-action: CREATE_IF_NOT_EXISTS
+      request:
+        timeout: 10s
+      connection:
+        connect-timeout: 10s
+        init-query-timeout: 10s
+
+      local-datacenter: datacenter1
+      keyspace-name: spring_boot_cassandra_demo
+
+# logging settings
+logging:
+  level:
+    root: info
+    com:
+      datastax: warn
+      zaxxer: warn
+    org:
+      apache: warn
+      springframework: warn

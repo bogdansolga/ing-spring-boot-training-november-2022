@@ -1,0 +1,23 @@
+spring:
+  data:
+    mongodb:
+      database: spring-boot-demo
+      host: localhost
+      password: aVeryComplexPassword
+      port: 27017
+      username: 'spring-boot-admin'
+      authentication-database: admin
+
+  # indent the returned JSON responses
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+# logging settings
+logging:
+  level:
+    root: info
+    org:
+      apache: warn
+      mongodb: warn
+      springframework: warn

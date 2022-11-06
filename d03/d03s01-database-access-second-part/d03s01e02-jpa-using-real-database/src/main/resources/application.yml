@@ -1,0 +1,54 @@
+# the name of the current app
+spring:
+  application:
+    name: spring-boot-real-database-connection-demo
+
+  # DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    name: spring_boot
+    password: spring_boot_admin
+    username: spring_boot_admin
+    url: jdbc:postgresql://localhost:5432/${spring.datasource.name}
+
+  # JPA properties - JpaProperties
+  jpa:
+    hibernate:
+      ddl-auto: create # use it carefully, for development only
+
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        temp:
+          use_jdbc_metadata_defaults: false
+    open-in-view: false
+
+  # indent the returned JSON responses
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+  # the database type
+  sql:
+    init:
+      platform: postgresql
+
+# logging settings
+logging:
+  level:
+    root: info
+    com:
+      zaxxer: warn
+    org:
+      apache: warn
+        # to see the query parameters - change 'sql' to 'debug' and 'type' to 'trace'
+      hibernate: warn
+        #sql: warn
+        #type: warn
+      springframework: warn
+
+  pattern:
+    console: '%clr([%date{HH:mm:ss.SSS}]){faint} %clr(%2p) %clr(%-40.40logger{36}){cyan} %m%n%wex'

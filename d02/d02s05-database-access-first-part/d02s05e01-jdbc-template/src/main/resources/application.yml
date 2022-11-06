@@ -1,0 +1,46 @@
+# the name of the current app
+spring:
+  application:
+    name: spring-boot-jdbc-template-usage
+
+  # DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+  datasource:
+    # on disk database
+    url: jdbc:h2:~/products
+    username: sa
+    password: aVeryComplexPassword
+
+  # indent the returned JSON responses
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+  h2:
+    console:
+      enabled: true
+
+  # the database type
+  sql:
+    init:
+      platform: h2
+      schema-locations: 'classpath:schema.sql'
+      data-locations: 'classpath:data.sql'
+      # to be set to 'always' when the bootstrapping of the local database is needed
+      mode: always
+
+# logging settings
+logging:
+  level:
+    root: info
+    com:
+      zaxxer: warn
+    org:
+      apache: warn
+        # to see the query parameters - change 'sql' to 'debug' and 'type' to 'trace'
+      hibernate: warn
+        #sql: warn
+        #type: warn
+      springframework: warn
+
+  pattern:
+    console: '%clr([%date{HH:mm:ss.SSS}]){faint} %clr(%2p) %clr(%-40.40logger{36}){cyan} %m%n%wex'

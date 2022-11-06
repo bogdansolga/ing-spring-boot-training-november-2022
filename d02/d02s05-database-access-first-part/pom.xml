@@ -4,17 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>d03</artifactId>
+    <artifactId>d02s05-database-access-first-part</artifactId>
     <packaging>pom</packaging>
 
     <parent>
         <groupId>com.ing</groupId>
-        <artifactId>spring-boot.training</artifactId>
+        <artifactId>d02</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
     <modules>
-        <module>d03s01-database-access-second-part</module>
-        <module>d03s02-nosql-database-access</module>
+        <module>d02s05e01-jdbc-template</module>
     </modules>
 </project>

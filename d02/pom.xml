@@ -18,6 +18,6 @@
         <module>d02s02-properties-and-profiles</module>
         <module>d02s03-spring-web</module>
         <module>d02s04-exception-handling</module>
-        <module>d02s05-database-access-using-jdbc</module>
+        <module>d02s05-database-access-first-part</module>
     </modules>
 </project>

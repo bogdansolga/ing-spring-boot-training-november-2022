@@ -8,7 +8,7 @@
     <packaging>pom</packaging>
 
     <parent>
-        <groupId>net.safedata</groupId>
+        <groupId>com.ing</groupId>
         <artifactId>d01</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>

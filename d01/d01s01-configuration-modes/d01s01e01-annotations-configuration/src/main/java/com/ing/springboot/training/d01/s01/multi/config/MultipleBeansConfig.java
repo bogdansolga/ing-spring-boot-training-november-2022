@@ -1,0 +1,42 @@
+package com.ing.springboot.training.d01.s01.multi.config;
+
+import com.ing.springboot.training.d01.s01.multi.beans.HelloSpring;
+import com.ing.spring.training.domain.model.Product;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * Sample Spring configuration, which exposes several simple {@link Bean}s
+ *
+ * @author bogdan.solga
+ */
+@Configuration
+@SuppressWarnings("unused")
+public class MultipleBeansConfig {
+
+    // the method 'helloSpring' creates a HelloSpring bean, as it has the @Bean annotation
+    @Bean
+    public HelloSpring helloSpring() {
+        return new HelloSpring();
+    }
+
+    @Bean
+    public HelloSpring otherHelloSpring() {
+        return new HelloSpring();
+    }
+
+    @Bean
+    public Product product() {
+        return new Product(1, "Tablet", 200d);
+    }
+
+    @Bean
+    public String helloSpringAsString() {
+        return "Hello, Spring [as a string]!";
+    }
+
+    @Bean
+    public Boolean booleanBean() {
+        return Boolean.TRUE;
+    }
+}

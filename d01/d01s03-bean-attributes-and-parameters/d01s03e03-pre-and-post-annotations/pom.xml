@@ -7,7 +7,7 @@
     <artifactId>d01s03e03-pre-and-post-annotations</artifactId>
 
     <parent>
-        <groupId>net.safedata</groupId>
+        <groupId>com.ing</groupId>
         <artifactId>d01s03-bean-attributes-and-parameters</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>

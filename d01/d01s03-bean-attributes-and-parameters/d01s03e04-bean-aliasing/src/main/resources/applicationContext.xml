@@ -7,7 +7,7 @@
 	<!-- <import resource="otherAppContext.xml"/> -->
 
     <bean id="productRepository"
-          class="net.safedata.springboot.training.d01.s03.repository.ProductRepository"/>
+          class="repository.com.ing.springboot.training.d01.s03.ProductRepository"/>
 
     <alias name="productRepository" alias="repository"/>
     <alias name="productRepository" alias="prodRepo"/>

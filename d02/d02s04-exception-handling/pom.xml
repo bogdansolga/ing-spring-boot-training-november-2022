@@ -7,7 +7,7 @@
     <artifactId>d02s04-exception-handling</artifactId>
 
     <parent>
-        <groupId>net.safedata</groupId>
+        <groupId>com.ing</groupId>
         <artifactId>d02</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>

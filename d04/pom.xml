@@ -19,5 +19,7 @@
         <module>d04s02-unit-and-integration-testing</module>
         <module>d04s03-using-aspects</module>
         <module>d04s04-spring-security-using-oauth2</module>
+        <module>d04s05-using-wiremock</module>
+        <module>d04s06-using-test-containers</module>
     </modules>
 </project>

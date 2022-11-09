@@ -16,3 +16,12 @@ logging:
 # defining a custom property
 connection:
   timeout: 5000
+
+list-example:
+  - first
+  - second
+  - third
+
+map-example:
+  - key: value
+  - otherKey: otherValue

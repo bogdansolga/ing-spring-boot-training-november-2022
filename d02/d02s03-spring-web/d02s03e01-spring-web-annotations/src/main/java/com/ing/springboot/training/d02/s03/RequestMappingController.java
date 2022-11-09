@@ -1,5 +1,7 @@
 package com.ing.springboot.training.d02.s03;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.CacheControl;
 import org.springframework.http.ContentDisposition;
@@ -42,6 +44,8 @@ import java.util.concurrent.TimeUnit;
 @RestController
 @RequestMapping("/examples")
 public class RequestMappingController {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(RequestMappingController.class);
 
     private static final LocalDateTime NOW = LocalDateTime.now();
 
@@ -102,8 +106,8 @@ public class RequestMappingController {
         try (final InputStream inputStream = classPathResource.getInputStream();
              final ServletOutputStream outputStream = response.getOutputStream()) {
             readAndWrite(inputStream, outputStream);
-        } catch (Exception ex) {
-            ex.printStackTrace();
+        } catch (IOException ex) {
+            LOGGER.error("An exception occurred: {}", ex.getMessage(), ex);
         }
     }
 

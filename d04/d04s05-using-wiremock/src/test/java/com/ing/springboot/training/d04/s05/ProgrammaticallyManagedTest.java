@@ -9,6 +9,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
@@ -20,33 +21,33 @@ import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static com.github.tomakehurst.wiremock.client.WireMock.verify;
 import static org.junit.Assert.assertEquals;
 
-public class ProgrammaticallyManagedLiveTest {
+public class ProgrammaticallyManagedTest {
 
-    private static final String BAELDUNG_PATH = "/baeldung";
+    private static final String TESTED_PATH = "/spring-boot";
 
-    private WireMockServer wireMockServer = new WireMockServer();
-    private CloseableHttpClient httpClient = HttpClients.createDefault();
+    private final WireMockServer wireMockServer = new WireMockServer();
+    private final CloseableHttpClient httpClient = HttpClients.createDefault();
 
     @Test
     public void givenProgrammaticallyManagedServer_whenUsingSimpleStubbing_thenCorrect() throws IOException {
         wireMockServer.start();
 
         configureFor("localhost", 8080);
-        stubFor(get(urlEqualTo(BAELDUNG_PATH)).willReturn(aResponse().withBody("Welcome to Baeldung!")));
+        stubFor(get(urlEqualTo(TESTED_PATH)).willReturn(aResponse().withBody("Welcome to WireMock!")));
 
-        HttpGet request = new HttpGet("http://localhost:8080/baeldung");
+        HttpGet request = new HttpGet("http://localhost:8080/spring-boot");
         HttpResponse httpResponse = httpClient.execute(request);
         String stringResponse = convertResponseToString(httpResponse);
 
-        verify(getRequestedFor(urlEqualTo(BAELDUNG_PATH)));
-        assertEquals("Welcome to Baeldung!", stringResponse);
+        verify(getRequestedFor(urlEqualTo(TESTED_PATH)));
+        assertEquals("Welcome to spring-boot!", stringResponse);
 
         wireMockServer.stop();
     }
 
     private static String convertResponseToString(HttpResponse response) throws IOException {
         InputStream responseStream = response.getEntity().getContent();
-        Scanner scanner = new Scanner(responseStream, "UTF-8");
+        Scanner scanner = new Scanner(responseStream, StandardCharsets.UTF_8);
         String stringResponse = scanner.useDelimiter("\\Z").next();
         scanner.close();
         return stringResponse;

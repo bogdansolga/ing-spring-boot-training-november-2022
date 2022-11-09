@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>d04s05-using-test-containers</artifactId>
+    <artifactId>d04s06-using-test-containers</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>

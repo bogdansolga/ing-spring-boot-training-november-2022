@@ -34,7 +34,7 @@ public class DataSourceConfig {
         this.productService = productService;
     }
 
-    //@PostConstruct
+    @PostConstruct
     public void init() {
         IntStream.range(0, 10)
                  .forEach(value ->

@@ -37,7 +37,9 @@ public class ProductService {
             readOnly = true,
             propagation = Propagation.SUPPORTS,
             isolation = Isolation.READ_COMMITTED,
-            noRollbackFor = IllegalArgumentException.class
+            noRollbackFor = IllegalArgumentException.class,
+            rollbackFor = NullPointerException.class,
+            timeout = 5
     )
     public Product get(final int id) {
         return productRepository.findById(id)

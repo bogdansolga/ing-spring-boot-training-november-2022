@@ -6,12 +6,25 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import java.util.Objects;
 
 @Entity(name = "Product")
+@Table(
+        name = "product",
+        //schema = "public",
+        uniqueConstraints = {
+                @UniqueConstraint(name = "unique_name", columnNames = "name")
+        },
+        indexes = {
+                @Index(name = "name_index", columnList = "name")
+        }
+)
 public class Product extends AbstractEntity {
 
     @Id

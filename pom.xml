@@ -31,6 +31,7 @@
         <java.version>11</java.version>
 
         <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+        <metrics-core.version>3.0.2</metrics-core.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
